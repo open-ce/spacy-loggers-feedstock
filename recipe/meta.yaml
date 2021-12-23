@@ -26,9 +26,7 @@ requirements:
 
 test:
   imports:
-    - {{ modulename }}
-  requires:
-    - spacy 
+    - {{ modulename }} 
 
 about:
   home: https://github.com/explosion/spacy-loggers

@@ -1,0 +1,7 @@
+tests:
+  - name: Setup spacy-loggers Tests
+    command: |
+        conda install -y pytest>=4.6.5 pytest-timeout mock
+  - name: Run spaCy tests
+        SPACY_LOGGERS_LOCATION=$(python -c "import os; import spacy_loggers; print(os.path.dirname(spacy_loggers.__file__))")
+        pytest -v $SPACY_LOGGERS_LOCATION/tests/
