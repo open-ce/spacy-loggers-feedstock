@@ -12,26 +12,20 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
-
+  string: pyh{{ PKG_HASH }}_{{ PKG_BUILDNUM }}
 requirements:
   host:
-    - python >=3.6
+    - python 
     - pip
   run:
-    - python >=3.6
-    - wasabi >=0.8.1,<1.1.0
+    - python 
+    - wasabi
 
 test:
   imports:
     - {{ modulename }}
-  requires:
-    - pytest
-    - spacy >=3.1
-  commands:
-    - python -m pytest --tb=native --pyargs {{ modulename }}
-
 
 about:
   home: https://github.com/explosion/spacy-loggers
@@ -45,7 +39,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - honnibal
-    - ines
-    - rspeer
-    - adrianeboyd
+    - open-ce/open-ce-dev-team
